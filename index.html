@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justAI - Justice for Everyone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #004aad;
+            color: #fff;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        #hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: url('friends_190412.jpg') no-repeat center center/cover;
+            color: #fff;
+            position: relative;
+        }
+
+        #hero h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #hero button {
+            padding: 1rem 2rem;
+            border: none;
+            background: #ff6600;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        #hero button:hover {
+            background: #cc5200;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 3rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .feature-card {
+            width: 250px;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .feature-card img {
+            width: 60px;
+        }
+
+        .feature-card h3 {
+            color: #004aad;
+            margin: 1rem 0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 500px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form input, form textarea {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 1rem;
+            border: none;
+            background: #004aad;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: #003580;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>justAI</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Justice is for Everyone</h2>
+            <p>Empowering individuals with AI-driven legal support for a fairer tomorrow.</p>
+            <button onclick="downloadApp()">Get the App</button>
+        </section>
+
+        <section id="about">
+            <h2>About justAI</h2>
+            <img src="https://source.unsplash.com/800x400/?legal,justice" alt="About justAI" style="width:100%;border-radius:10px;margin-top:1rem;">
+            <p>justAI is an AI-powered platform designed to provide legal assistance, conflict resolution, and community resources, ensuring justice for all.</p>
+        </section>
+
+        <section id="features">
+            <h2>Why Choose justAI?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <img src="https://img.icons8.com/ios-filled/100/legal.png" alt="Legal AI">
+                    <h3>AI Legal Assistance</h3>
+                    <p>Instant AI-powered legal guidance.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://img.icons8.com/ios-filled/100/security-checked.png" alt="Security">
+                    <h3>Trusted & Secure</h3>
+                    <p>100% privacy & protection.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://img.icons8.com/ios-filled/100/group.png" alt="Community">
+                    <h3>Community Support</h3>
+                    <p>Access legal resources & forums.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form onsubmit="return sendMessage(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 justAI. All rights reserved. Justice for Everyone.</p>
+    </footer>
+
+    <script>
+        function downloadApp() {
+            alert("The justAI app is under development. Stay tuned!");
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+            alert("Thank you! Your message has been received.");
+        }
+    </script>
+
+    <!-- Chatbase Chatbot Integration Script -->
+    <script>
+        (function(){
+            if(!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...arguments) => {
+                    if (!window.chatbase.q) {
+                        window.chatbase.q = [];
+                    }
+                    window.chatbase.q.push(arguments);
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") {
+                            return target.q;
+                        }
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+
+            const onLoad = function() {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "u7tr91oPhnFhpo-vMU8Yc";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
+</body>
+</html>

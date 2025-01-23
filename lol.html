@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justAI - Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('(3).jpeg') no-repeat center center/cover;
+            background-size: cover;
+            background-attachment: fixed;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            color: white;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            color: #333;
+        }
+
+        .input-field:focus {
+            border: 2px solid #ff6600;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: #004aad;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #003580;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: -5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .footer a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Create Your justAI Account</h2>
+        <form id="signupForm">
+            <input type="text" class="input-field" id="name" placeholder="Full Name" required>
+            <p class="error" id="nameError"></p>
+
+            <input type="email" class="input-field" id="email" placeholder="Email Address" required>
+            <p class="error" id="emailError"></p>
+
+            <input type="password" class="input-field" id="password" placeholder="Password" required>
+            <p class="error" id="passwordError"></p>
+
+            <input type="password" class="input-field" id="confirmPassword" placeholder="Confirm Password" required>
+            <p class="error" id="confirmPasswordError"></p>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="footer">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Clear previous errors
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("passwordError").textContent = "";
+            document.getElementById("confirmPasswordError").textContent = "";
+
+            // Get input values
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let isValid = true;
+
+            // Name validation
+            if (name.length < 3) {
+                document.getElementById("nameError").textContent = "Name must be at least 3 characters.";
+                isValid = false;
+            }
+
+            // Email validation
+            if (!email.includes("@") || !email.includes(".")) {
+                document.getElementById("emailError").textContent = "Enter a valid email address.";
+                isValid = false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                document.getElementById("passwordError").textContent = "Password must be at least 6 characters.";
+                isValid = false;
+            }
+
+            // Confirm password validation
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+                isValid = false;
+            }
+
+            // If all fields are valid, submit the form
+            if (isValid) {
+                alert("Sign-up successful! Redirecting...");
+                window.location.href = "index.html"; // Redirect to login page
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
